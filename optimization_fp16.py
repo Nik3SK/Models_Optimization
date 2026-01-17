@@ -5,8 +5,8 @@ import numpy as np
 from typing import List, Tuple, Union
 
 
-INPUT = "enet_b0_8_best_afew.onnx"
-OUTPUT = "fp16_fixed_emotion.onnx"
+INPUT = "./models/det_500m.onnx"
+OUTPUT = "fp16_det_500m.onnx"
 
 
 def convert_to_fp16_preserve_output(model):
