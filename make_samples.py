@@ -3,13 +3,13 @@ import random
 import shutil
 
 # Пути к исходным и целевым папкам
-src_negative = 'negative'
-src_positive = 'positive'
+src_negative = 'C:\Projects_Visual_Studio\Emotion_detection_optimization\\negative'
+src_positive = 'C:\Projects_Visual_Studio\Emotion_detection_optimization\positive'
 dst_negative = 'sample_negative'
 dst_positive = 'sample_positive'
 
 # Количество изображений для выборки
-sample_size = 100
+sample_size = 500
 
 def create_sample(src_folder, dst_folder, n):
     # Получаем список всех файлов в папке (игнорируем подпапки)

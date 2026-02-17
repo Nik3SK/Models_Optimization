@@ -7,7 +7,7 @@ from time import time
 # from emotiefflib.facial_analysis import get_model_list, EmotiEffLibRecognizer
 
 # from EEFRecognizer import EmotiEffLibRecognizerOnnxCustom
-from EEFRecognizer_v2 import EmotiEffLibRecognizerOnnxCustom
+from EEFRecognizer_custom import EmotiEffLibRecognizerOnnxCustom
 from sklearn.metrics import precision_score, recall_score, accuracy_score
 from tqdm import tqdm
 import matplotlib.pyplot as plt
@@ -15,10 +15,10 @@ from onnx import TensorProto, helper, numpy_helper
 import onnxruntime as ort
 
 # Папка с изображениями
-input_dir = "positive"
+input_dir = "sample_negative"
 # Берём первые три файла
 files = sorted(os.listdir(input_dir))[:3]
-fer = EmotiEffLibRecognizerOnnxCustom(model_name='f', model_path = 'fp16_fixed_emotion.onnx')
+fer = EmotiEffLibRecognizerOnnxCustom(model_name='f', model_path = 'models/fp16_fixed_emotion.onnx')
 emotions = []
 
 for fname in files:
