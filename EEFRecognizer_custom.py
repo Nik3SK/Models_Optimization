@@ -91,7 +91,7 @@ class EmotiEffLibRecognizerOnnxCustom(EmotiEffLibRecognizerBaseCustom):
         super().__init__(model_name)
 
         # Загружаем модель как есть
-        self.ort_session = ort.InferenceSession(model_path, providers=["CPUExecutionProvider"])
+        self.ort_session = ort.InferenceSession(model_path, providers=["CUDAExecutionProvider", "CPUExecutionProvider"])
 
         # Определяем имя входа и выхода
         self.input_name = self.ort_session.get_inputs()[0].name

@@ -13,13 +13,14 @@ from EEFRecognizer_custom import EmotiEffLibRecognizerOnnxCustom
 # ==============================
 
 MODEL_PATHS = {
-    "fp32": "models/enet_b0_8_best_afew.onnx",
-    "fp16": "models/fp16_fixed_emotion.onnx",
-    "int8": "models/model_int8.onnx",
+    "fp32_afew": "models/enet_b0_8_best_afew.onnx",
+    "fp32_mtl": "models/enet_b0_8_va_mtl.onnx",
+    "fp16_afew": "models/fp16_enet_b0_8_best_afew.onnx",
+    "fp16_mtl": "models/fp16_enet_b0_8_va_mtl.onnx"
 }
 
-POSITIVE_DIR = "positive"
-NEGATIVE_DIR = "negative"
+POSITIVE_DIR = "../sample_positive"
+NEGATIVE_DIR = "../sample_negative"
 WARMUP_RUNS = 20
 
 
@@ -56,9 +57,7 @@ def benchmark_model(model_name, model_path):
 
     # Переключаем execution provider
     recognizer.ort_session.set_providers(
-        ["CUDAExecutionProvider"],
-        [{"cudnn_conv_algo_search": "EXHAUSTIVE"}]
-    )
+        ["CUDAExecutionProvider"])
 
     # Проверка
     print("Providers:", recognizer.ort_session.get_providers())

@@ -3,10 +3,10 @@ import random
 import shutil
 
 # Пути к исходным и целевым папкам
-src_negative = 'C:\Projects_Visual_Studio\Emotion_detection_optimization\\negative'
-src_positive = 'C:\Projects_Visual_Studio\Emotion_detection_optimization\positive'
-dst_negative = 'sample_negative'
-dst_positive = 'sample_positive'
+src_negative = '../Smile_crop_dataset_x2340/negative'
+src_positive = '../Smile_crop_dataset_x2340/positive'
+dst_negative = '../sample_negative'
+dst_positive = '../sample_positive'
 
 # Количество изображений для выборки
 sample_size = 500
